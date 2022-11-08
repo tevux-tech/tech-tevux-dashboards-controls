@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <OutputType>Exe</OutputType>
-    <Version>0.21.0</Version>
+    <Version>0.21.0-preview.1</Version>
     <Company>Tevux Technologies</Company>
     <Copyright>© 2022 Tevux Technologies</Copyright>
     <Title>Basic controls for Tevux Dashboards</Title>
@@ -60,7 +60,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
     <PackageReference Include="Tech.Tevux.Dashboards.Controls.Base" Version="0.22.0" />
-    <PackageReference Include="Tevux.Dashboards.Abstractions" Version="0.40.0">
+    <PackageReference Include="Tevux.Dashboards.Abstractions" Version="0.41.0-preview.4">
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
     <PackageReference Include="Tevux.Software.Helpers" Version="0.18.0" />
