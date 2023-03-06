@@ -3,9 +3,10 @@
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
+    <NoWarn>CS1591</NoWarn>
     <UseWPF>true</UseWPF>
-    <OutputType>Exe</OutputType>
-    <Version>0.21.0</Version>
+    <OutputType>Library</OutputType>
+    <Version>0.22.0-preview.20</Version>
     <Company>Tevux Technologies</Company>
     <Copyright>© 2022 Tevux Technologies</Copyright>
     <Title>Basic controls for Tevux Dashboards</Title>
@@ -21,6 +22,7 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <DebugType>embedded</DebugType>
     <!--End-->
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
@@ -52,19 +54,15 @@
 
   <ItemGroup>
     <AssemblyAttribute Include="Tevux.Dashboards.Abstractions.AssemblyLoadContextAttribute">
-      <ContextName>Tech.Tevux.Dashboards.Controls</ContextName>
-      <ContextFriendlyName>Generic</ContextFriendlyName>
+      <FriendlyName>Generic</FriendlyName>
     </AssemblyAttribute>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-    <PackageReference Include="Tech.Tevux.Dashboards.Controls.Base" Version="0.22.0" />
-    <PackageReference Include="Tevux.Dashboards.Abstractions" Version="0.40.0">
-      <ExcludeAssets>runtime</ExcludeAssets>
-    </PackageReference>
+    <PackageReference Include="Tech.Tevux.Dashboards.Controls.Base" Version="0.23.0-preview.34" />
     <PackageReference Include="Tevux.Software.Helpers" Version="0.18.0" />
-    <PackageReference Include="Tevux.Tools.RepositorySettings" Version="1.4.4">
+    <PackageReference Include="Tevux.Tools.RepositorySettings" Version="1.5.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
