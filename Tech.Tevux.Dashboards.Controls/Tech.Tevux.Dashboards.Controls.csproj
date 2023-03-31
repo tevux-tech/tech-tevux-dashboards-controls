@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
@@ -60,7 +60,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-    <PackageReference Include="Tech.Tevux.Dashboards.Controls.Base" Version="0.23.0" />
+    <PackageReference Include="Tech.Tevux.Dashboards.Controls.Base" Version="0.24.0-preview.4" />
     <PackageReference Include="Tevux.Software.Helpers" Version="0.18.0" />
     <PackageReference Include="Tevux.Tools.RepositorySettings" Version="1.5.1">
       <PrivateAssets>all</PrivateAssets>
