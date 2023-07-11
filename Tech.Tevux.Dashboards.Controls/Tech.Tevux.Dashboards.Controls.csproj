@@ -9,7 +9,7 @@
     <Version>0.34.0</Version>
     <Company>Tevux Technologies</Company>
     <Copyright>© 2022 Tevux Technologies</Copyright>
-    <Title>Basic controls for Tevux Dashboards</Title>
+    <AssemblyTitle>Basic controls</AssemblyTitle>
     <Authors>devbotas</Authors>
     <Description>Provides most common controls, like Label.</Description>
     <RepositoryUrl>https://github.com/tevux-tech/tech-tevux-dashboards-controls</RepositoryUrl>
@@ -51,12 +51,6 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
   </PropertyGroup>
-
-  <ItemGroup>
-    <AssemblyAttribute Include="Tevux.Dashboards.Abstractions.AssemblyLoadContextAttribute">
-      <FriendlyName>Generic</FriendlyName>
-    </AssemblyAttribute>
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
