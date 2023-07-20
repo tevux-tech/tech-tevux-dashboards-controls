@@ -2,12 +2,12 @@
 
 namespace Tech.Tevux.Dashboards.Controls;
 
-public class MyLibrary : ILibrary, IDashboardControlProvider {
+public class BasicControlsLibrary : ILibrary, IDashboardControlProvider {
     private bool _isDisposed;
-    public static MyLibrary Instance { get; } = new MyLibrary();
+    public static BasicControlsLibrary Instance { get; } = new();
     public List<System.Type> DashboardControls { get; private set; } = new();
 
-    private MyLibrary() {
+    private BasicControlsLibrary() {
         DashboardControls.Add(typeof(Label));
     }
 
