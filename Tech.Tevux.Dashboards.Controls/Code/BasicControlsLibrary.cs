@@ -3,22 +3,50 @@
 namespace Tech.Tevux.Dashboards.Controls;
 
 public class BasicControlsLibrary : ILibrary, IDashboardControlProvider {
-    private bool _isDisposed;
     public static BasicControlsLibrary Instance { get; } = new();
-    public List<System.Type> DashboardControls { get; private set; } = new();
 
     private BasicControlsLibrary() {
         DashboardControls.Add(typeof(Label));
+        DashboardControls.Add(typeof(ScriptNumericIndicator));
+        DashboardControls.Add(typeof(ScriptTextualIndicator));
+        DashboardControls.Add(typeof(ScriptNud));
     }
+
+    #region Dependency injection
+
+    [InjectedByHost]
+    public ISharedLibraryMessagingProvider GlobalMessenger { get; set; } = new EmptySharedLibraryMessagingProvider();
+
+    [InjectedByHost]
+    public ILogger Logger { get; set; } = NullLogger.Instance;
+
+    #endregion
+
+    #region Dependency providers 
+
+    public List<System.Type> DashboardControls { get; private set; } = new();
+
+    #endregion
+
+    #region ILibrary
+    private bool _isInitialized;
+
+    public void Initialize() {
+        if (_isInitialized) { return; }
+
+        _isInitialized = true;
+    }
+
+    #endregion
+
+    #region IDisposable
+
+    private bool _isDisposed;
 
     public void Dispose() {
         // A good article explaining how to implement Dispose. https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose
         Dispose(true);
         GC.SuppressFinalize(this);
-    }
-
-    public void Initialize() {
-
     }
 
     protected virtual void Dispose(bool isCalledManually) {
@@ -32,4 +60,5 @@ public class BasicControlsLibrary : ILibrary, IDashboardControlProvider {
             _isDisposed = true;
         }
     }
+    #endregion
 }

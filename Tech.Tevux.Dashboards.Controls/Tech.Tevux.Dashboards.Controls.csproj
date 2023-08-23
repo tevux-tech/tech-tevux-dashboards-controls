@@ -30,22 +30,6 @@
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Code\Label\ExposedProperties\" />
-    <Folder Include="Code\Label\TemplateProperties\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="Themes\Generic.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Themes\Label.xaml">
-      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
-
   <!--Tevux related settings-->
   <PropertyGroup>
     <EnableDynamicLoading>true</EnableDynamicLoading>
@@ -53,6 +37,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="2.4.9" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
     <PackageReference Include="Tech.Tevux.Dashboards.Controls.Base" Version="0.45.0" />
     <PackageReference Include="Tevux.Software.Helpers" Version="0.18.0" />
