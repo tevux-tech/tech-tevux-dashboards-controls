@@ -2,7 +2,7 @@ using System.ComponentModel;
 
 namespace Tech.Tevux.Dashboards.Controls;
 
-[Category("Basic")]
+[Category("General")]
 [DisplayName("Label")]
 public partial class Label : ControlBase {
     static Label() {

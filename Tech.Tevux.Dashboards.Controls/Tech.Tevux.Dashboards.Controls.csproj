@@ -1,70 +1,50 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<TargetFramework>net6.0-windows</TargetFramework>
-		<Nullable>enable</Nullable>
-		<NoWarn>CS1591</NoWarn>
-		<UseWPF>true</UseWPF>
-		<OutputType>Library</OutputType>
-		<Version>0.27.0</Version>
-		<Company>Tevux Technologies</Company>
-		<Copyright>© 2022 Tevux Technologies</Copyright>
-		<Title>Basic controls for Tevux Dashboards</Title>
-		<Authors>devbotas</Authors>
-		<Description>Provides most common controls, like Label.</Description>
-		<RepositoryUrl>https://github.com/tevux-tech/tech-tevux-dashboards-controls</RepositoryUrl>
-		<PackageProjectUrl>https://github.com/tevux-tech/tech-tevux-dashboards-controls</PackageProjectUrl>
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <NoWarn>CS1591</NoWarn>
+    <UseWPF>true</UseWPF>
+    <OutputType>Library</OutputType>
+    <Version>0.37.0</Version>
+    <Company>Tevux Technologies</Company>
+    <Copyright>© 2022 Tevux Technologies</Copyright>
+    <AssemblyTitle>Basic controls</AssemblyTitle>
+    <Authors>devbotas</Authors>
+    <Description>Provides most common controls, like Label.</Description>
+    <RepositoryUrl>https://github.com/tevux-tech/tech-tevux-dashboards-controls</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/tevux-tech/tech-tevux-dashboards-controls</PackageProjectUrl>
 
-		<EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
 
-		<!--Configuring source Link-->
-		<PublishRepositoryUrl>true</PublishRepositoryUrl>
-		<EmbedUntrackedSources>true</EmbedUntrackedSources>
-		<DebugType>embedded</DebugType>
-		<!--End-->
-		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-	</PropertyGroup>
+    <!--Configuring source Link-->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <DebugType>embedded</DebugType>
+    <!--End-->
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
 
-	<PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
-		<!--This enables "deterministic builds"-->
-		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-	</PropertyGroup>
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <!--This enables "deterministic builds"-->
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<Folder Include="Code\Label\ExposedProperties\" />
-		<Folder Include="Code\Label\TemplateProperties\" />
-	</ItemGroup>
+  <!--Tevux related settings-->
+  <PropertyGroup>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<Page Update="Themes\Generic.xaml">
-			<XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-			<SubType>Designer</SubType>
-		</Page>
-		<Page Update="Themes\Label.xaml">
-			<XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
-			<SubType>Designer</SubType>
-		</Page>
-	</ItemGroup>
-
-	<!--Tevux related settings-->
-	<PropertyGroup>
-		<EnableDynamicLoading>true</EnableDynamicLoading>
-		<SatelliteResourceLanguages>en</SatelliteResourceLanguages>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<AssemblyAttribute Include="Tevux.Dashboards.Abstractions.AssemblyLoadContextAttribute">
-			<FriendlyName>Generic</FriendlyName>
-		</AssemblyAttribute>
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-		<PackageReference Include="Tech.Tevux.Dashboards.Controls.Base" Version="0.24.0" />
-		<PackageReference Include="Tevux.Software.Helpers" Version="0.18.0" />
-		<PackageReference Include="Tevux.Tools.RepositorySettings" Version="1.5.1">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="2.4.9" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+    <PackageReference Include="Tech.Tevux.Dashboards.Controls.Base" Version="0.45.0" />
+    <PackageReference Include="Tevux.Software.Helpers" Version="0.18.0" />
+    <PackageReference Include="Tevux.Tools.RepositorySettings" Version="1.7.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 </Project>
