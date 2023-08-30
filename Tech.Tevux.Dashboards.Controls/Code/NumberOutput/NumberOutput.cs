@@ -1,16 +1,16 @@
 ﻿namespace Tech.Tevux.Dashboards.Controls;
 
 [Category("General")]
-[DisplayName("Script numeric indicator")]
-public partial class ScriptNumericIndicator : NumericOutputControlBase {
+[DisplayName("Number output")]
+public partial class NumberOutput : NumericOutputControlBase {
     private readonly ISharedLibraryMessagingProvider _interLibraryMessenger;
     private bool _isDisposed;
 
-    static ScriptNumericIndicator() {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(ScriptNumericIndicator), new FrameworkPropertyMetadata(typeof(ScriptNumericIndicator)));
+    static NumberOutput() {
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(NumberOutput), new FrameworkPropertyMetadata(typeof(NumberOutput)));
     }
 
-    public ScriptNumericIndicator() {
+    public NumberOutput() {
         _interLibraryMessenger = BasicControlsLibrary.Instance.GlobalMessenger;
     }
     public override void OnApplyTemplate() {

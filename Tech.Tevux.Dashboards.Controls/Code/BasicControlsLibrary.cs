@@ -7,9 +7,9 @@ public class BasicControlsLibrary : ILibrary, IDashboardControlProvider {
 
     private BasicControlsLibrary() {
         DashboardControls.Add(typeof(Label));
-        DashboardControls.Add(typeof(ScriptNumericIndicator));
-        DashboardControls.Add(typeof(ScriptTextualIndicator));
-        DashboardControls.Add(typeof(ScriptNud));
+        DashboardControls.Add(typeof(NumberOutput));
+        DashboardControls.Add(typeof(TextOutput));
+        DashboardControls.Add(typeof(NumberInput));
     }
 
     #region Dependency injection

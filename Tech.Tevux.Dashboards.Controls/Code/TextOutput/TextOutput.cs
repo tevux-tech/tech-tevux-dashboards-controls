@@ -1,16 +1,16 @@
 ﻿namespace Tech.Tevux.Dashboards.Controls;
 
 [Category("General")]
-[DisplayName("Script textual indicator")]
-public partial class ScriptTextualIndicator : TextualOutputControlBase {
+[DisplayName("Text output")]
+public partial class TextOutput : TextualOutputControlBase {
     private readonly ISharedLibraryMessagingProvider _interLibraryMessenger;
     private bool _isDisposed;
 
-    static ScriptTextualIndicator() {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(ScriptTextualIndicator), new FrameworkPropertyMetadata(typeof(ScriptTextualIndicator)));
+    static TextOutput() {
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(TextOutput), new FrameworkPropertyMetadata(typeof(TextOutput)));
     }
 
-    public ScriptTextualIndicator() {
+    public TextOutput() {
         _interLibraryMessenger = BasicControlsLibrary.Instance.GlobalMessenger;
     }
     public override void OnApplyTemplate() {

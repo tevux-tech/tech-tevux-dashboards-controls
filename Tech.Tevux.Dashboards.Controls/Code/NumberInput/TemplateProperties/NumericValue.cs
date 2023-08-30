@@ -1,10 +1,10 @@
 namespace Tech.Tevux.Dashboards.Controls;
 
-public partial class ScriptNud {
+public partial class NumberInput {
     public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
         nameof(NumericValue),
         typeof(decimal),
-        typeof(ScriptNud),
+        typeof(NumberInput),
         new PropertyMetadata(0m));
 
     [DisplayName("Value")]

@@ -8,16 +8,16 @@ namespace Tech.Tevux.Dashboards.Controls;
 [HideExposedOption(nameof(Caption))]
 [HideExposedOption(nameof(Alignment))]
 [Category("General")]
-[DisplayName("Script numeric up-down")]
-public partial class ScriptNud : NumericInputControlBase {
+[DisplayName("Number input")]
+public partial class NumberInput : NumericInputControlBase {
     private readonly ISharedLibraryMessagingProvider _interLibraryMessenger;
     private bool _isDisposed;
 
-    static ScriptNud() {
-        DefaultStyleKeyProperty.OverrideMetadata(typeof(ScriptNud), new FrameworkPropertyMetadata(typeof(ScriptNud)));
+    static NumberInput() {
+        DefaultStyleKeyProperty.OverrideMetadata(typeof(NumberInput), new FrameworkPropertyMetadata(typeof(NumberInput)));
     }
 
-    public ScriptNud() {
+    public NumberInput() {
         _interLibraryMessenger = BasicControlsLibrary.Instance.GlobalMessenger;
     }
 

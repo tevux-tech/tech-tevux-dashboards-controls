@@ -1,12 +1,12 @@
 ﻿namespace Tech.Tevux.Dashboards.Controls;
 
-public partial class ScriptTextualIndicator {
+public partial class TextOutput {
     public static readonly DependencyProperty IdProperty = DependencyProperty.Register(
         nameof(Id),
         typeof(string),
-        typeof(ScriptTextualIndicator),
+        typeof(TextOutput),
         new PropertyMetadata("noname", (d, e) => {
-            ((ScriptTextualIndicator)d).Reconfigure();
+            ((TextOutput)d).Reconfigure();
         }));
 
     [ExposedSingleLineText]

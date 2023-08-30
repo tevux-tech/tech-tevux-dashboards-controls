@@ -1,12 +1,12 @@
 ﻿namespace Tech.Tevux.Dashboards.Controls;
 
-public partial class ScriptNud {
+public partial class NumberInput {
     public static readonly DependencyProperty IdProperty = DependencyProperty.Register(
         nameof(Id),
         typeof(string),
-        typeof(ScriptNud),
+        typeof(NumberInput),
         new PropertyMetadata("noname", (obj, e) => {
-            ((ScriptNud)obj).Reconfigure();
+            ((NumberInput)obj).Reconfigure();
         }));
 
     [ExposedSingleLineText]
