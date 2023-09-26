@@ -2,7 +2,7 @@
 
 namespace Tech.Tevux.Dashboards.Controls;
 
-public class BasicControlsLibrary : ILibrary, IDashboardControlProvider {
+public class BasicControlsLibrary : ILibrary, IDashboardControlProvider, IDashboardControlEditorProvider {
     public static BasicControlsLibrary Instance { get; } = new();
 
     private BasicControlsLibrary() {
@@ -10,6 +10,9 @@ public class BasicControlsLibrary : ILibrary, IDashboardControlProvider {
         DashboardControls.Add(typeof(NumberOutput));
         DashboardControls.Add(typeof(TextOutput));
         DashboardControls.Add(typeof(NumberInput));
+        DashboardControls.Add(typeof(Image));
+
+        DashboardControlEditors.Add(typeof(Image), new List<Type> { typeof(ImageEditor) });
     }
 
     #region Dependency injection
@@ -22,13 +25,15 @@ public class BasicControlsLibrary : ILibrary, IDashboardControlProvider {
 
     #endregion
 
-    #region Dependency providers 
+    #region Dependency providers
 
     public List<System.Type> DashboardControls { get; private set; } = new();
+    public Dictionary<Type, List<Type>> DashboardControlEditors { get; } = new();
 
     #endregion
 
     #region ILibrary
+
     private bool _isInitialized;
 
     public void Initialize() {
@@ -60,5 +65,6 @@ public class BasicControlsLibrary : ILibrary, IDashboardControlProvider {
             _isDisposed = true;
         }
     }
+
     #endregion
 }

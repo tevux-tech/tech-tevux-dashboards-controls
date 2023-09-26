@@ -5,5 +5,7 @@
         <ResourceDictionary Source="pack://application:,,,/Tech.Tevux.Dashboards.Controls;Component/Themes/TextOutput.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Tech.Tevux.Dashboards.Controls;Component/Themes/NumberOutput.xaml" />
         <ResourceDictionary Source="pack://application:,,,/Tech.Tevux.Dashboards.Controls;Component/Themes/NumberInput.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Tech.Tevux.Dashboards.Controls;Component/Themes/Image.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Tech.Tevux.Dashboards.Controls;Component/Themes/ImageEditor.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
