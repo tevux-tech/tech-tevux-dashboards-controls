@@ -9,19 +9,14 @@ using Microsoft.Win32;
 namespace Tech.Tevux.Dashboards.Controls;
 
 public class ImageEditor : Control, IDisposable {
+    public static readonly DependencyProperty LoadCommandProperty = DependencyProperty.Register(
+        nameof(LoadCommand),
+        typeof(ICommand),
+        typeof(ImageEditor),
+        new PropertyMetadata(default(ICommand)));
+
     static ImageEditor() {
         DefaultStyleKeyProperty.OverrideMetadata(typeof(ImageEditor), new FrameworkPropertyMetadata(typeof(ImageEditor)));
-    }
-
-    public ImageEditor() {
-    }
-
-    static void CopyStream(System.IO.Stream src, System.IO.Stream dest) {
-        byte[] buffer = new byte[1024];
-        int len;
-        while ((len = src.Read(buffer, 0, buffer.Length)) > 0)
-            dest.Write(buffer, 0, len);
-        dest.Flush();
     }
 
     public ImageEditor(Control control) : this() {
@@ -48,11 +43,7 @@ public class ImageEditor : Control, IDisposable {
         });
     }
 
-    public static readonly DependencyProperty LoadCommandProperty = DependencyProperty.Register(
-        nameof(LoadCommand),
-        typeof(ICommand),
-        typeof(ImageEditor),
-        new PropertyMetadata(default(ICommand)));
+    public ImageEditor() { }
 
     public ICommand LoadCommand {
         get { return (ICommand)GetValue(LoadCommandProperty); }

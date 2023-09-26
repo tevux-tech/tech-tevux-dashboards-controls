@@ -9,7 +9,7 @@ public partial class Image {
         nameof(RawData),
         typeof(string),
         typeof(Image),
-        new PropertyMetadata(null, (d, e) => {
+        new PropertyMetadata("", (d, e) => {
             if (d is not Image zeImage) { return; }
             if (e.NewValue is not string newRawData) { return; }
             if (newRawData.Length <= 0) { return; }
