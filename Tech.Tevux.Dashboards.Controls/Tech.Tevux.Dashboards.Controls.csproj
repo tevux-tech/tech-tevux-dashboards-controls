@@ -42,7 +42,7 @@
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
     <PackageReference Include="Tech.Tevux.Dashboards.Controls.Base" Version="1.0.0-preview.9"/>
     <PackageReference Include="Tevux.Software.Helpers" Version="0.18.0"/>
-    <PackageReference Include="Tevux.Tools.RepositorySettings" Version="1.7.0">
+    <PackageReference Include="Tevux.Tools.RepositorySettings" Version="1.8.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
