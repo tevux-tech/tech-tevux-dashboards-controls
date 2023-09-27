@@ -1,6 +1,5 @@
 ﻿using System.Drawing.Imaging;
 using System.IO;
-using System.IO.Compression;
 using System.Windows.Controls;
 using System.Windows.Input;
 using DevBot9.Mvvm;
@@ -61,15 +60,15 @@ public class ImageEditor : Control, IDisposable {
     }
 
     protected virtual void Dispose(bool isCalledManually) {
-        if (_isDisposed == false) {
-            if (isCalledManually) {
-                // Dispose managed objects here.
-            }
+        if (_isDisposed) { return; }
 
-            // Free unmanaged resources here and set large fields to null.
-
-            _isDisposed = true;
+        if (isCalledManually) {
+            // Dispose managed objects here.
         }
+
+        // Free unmanaged resources here and set large fields to null.
+
+        _isDisposed = true;
     }
 
     #endregion
