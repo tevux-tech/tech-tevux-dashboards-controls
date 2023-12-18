@@ -1,6 +1,6 @@
 ﻿namespace Tech.Tevux.Dashboards.Controls;
 
-public class AutoConverter {
+public static class AutoConverter {
     public static bool TryGetAsText(object input, out string inputAsText) {
         var success = false;
 
