@@ -13,6 +13,7 @@ public partial class TextOutput : TextualOutputControlBase {
     public TextOutput() {
         _interLibraryMessenger = BasicControlsLibrary.Instance.GlobalMessenger;
     }
+
     public override void OnApplyTemplate() {
         base.OnApplyTemplate();
 
@@ -25,6 +26,7 @@ public partial class TextOutput : TextualOutputControlBase {
         base.Reconfigure();
 
         _interLibraryMessenger.Unregister(this);
+        _interLibraryMessenger.Register<GetValueMessage>(this, Id, HandleGetValueMessage);
         _interLibraryMessenger.Register<SetValueMessage>(this, Id, HandleSetValueMessage);
     }
 
@@ -40,6 +42,12 @@ public partial class TextOutput : TextualOutputControlBase {
         }
 
         base.Dispose(isCalledManually);
+    }
+
+    private void HandleGetValueMessage(GetValueMessage message) {
+        Dispatcher.Invoke(() => {
+            message.Value = TextualValue;
+        });
     }
 
     private void HandleSetValueMessage(SetValueMessage message) {

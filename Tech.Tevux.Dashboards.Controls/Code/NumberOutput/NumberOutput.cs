@@ -13,6 +13,7 @@ public partial class NumberOutput : NumericOutputControlBase {
     public NumberOutput() {
         _interLibraryMessenger = BasicControlsLibrary.Instance.GlobalMessenger;
     }
+
     public override void OnApplyTemplate() {
         base.OnApplyTemplate();
 
@@ -25,6 +26,7 @@ public partial class NumberOutput : NumericOutputControlBase {
         base.Reconfigure();
 
         _interLibraryMessenger.Unregister(this);
+        _interLibraryMessenger.Register<GetValueMessage>(this, Id, HandleGetValueMessage);
         _interLibraryMessenger.Register<SetValueMessage>(this, Id, HandleSetValueMessage);
     }
 
@@ -40,6 +42,12 @@ public partial class NumberOutput : NumericOutputControlBase {
         }
 
         base.Dispose(isCalledManually);
+    }
+
+    private void HandleGetValueMessage(GetValueMessage message) {
+        Dispatcher.Invoke(() => {
+            message.Value = NumericValue;
+        });
     }
 
     private void HandleSetValueMessage(SetValueMessage message) {
